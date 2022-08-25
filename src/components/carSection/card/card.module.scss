@@ -1,0 +1,101 @@
+.parent {
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  padding: 16px;
+
+  &__image {
+    height: 144px;
+    width: 182px;
+    border-radius: 8px;
+  }
+
+  &__middleContent {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    &__optionLines {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      margin-top: 10px;
+    }
+
+    &__carName {
+      font-family: "Helvetica Neue LT GEO", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+      letter-spacing: 0px;
+      text-align: left;
+    }
+
+    &__option {
+      font-family: "TBC Sailec", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      width: 400px;
+      line-height: 12px;
+      letter-spacing: 0;
+      text-align: left;
+      margin-left: 12px;
+    }
+
+    &__views {
+      font-family: "Helvetica Neue LT GEO", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #6F7383;
+    }
+  }
+
+  &__rightInfoParent {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+
+    &__info {
+      color: #6F7383;
+      font-family: "TBC Sailec", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 11px;
+      letter-spacing: 0;
+      text-align: left;
+    }
+
+    &__price {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin-top: 27px;
+
+      &__value {
+        font-family: "TBC Sailec", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0;
+        margin-right: 8px;
+      }
+
+      &__currency {
+        height: 24px;
+        width: 26px;
+        border-radius: 50px;
+        background-color: #E2E5EB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

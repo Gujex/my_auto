@@ -1,0 +1,90 @@
+
+//.parent {
+//  border: 1px solid gray;
+//  border-top: none;
+//  border-radius: 10px 10px 0 0;
+//}
+
+.icons {
+  padding: 17px 26px;
+  width: 100%;
+}
+
+.form {
+  padding: 0px 24px 20px 24px;
+
+  &__selects {
+    padding: 22px 0;
+    border-bottom: 1px solid gray;
+
+
+    &__p {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 12px;
+      letter-spacing: 0;
+      text-align: left;
+      color: #272A37;
+      margin: 20px 0 8px 0;
+    }
+  }
+
+  &__priceSection {
+
+    padding: 16px 24px 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__priceInputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 44px;
+
+    &__dir{
+      margin: 0 5px;
+    }
+  }
+}
+
+.lari {
+  padding: 7px;
+  background: #272A37;
+  color: white;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dollar {
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  color: #8C929B;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn {
+  font-family: "font-family: TBC Sailec", sans-serif;
+  background: #FD4100;
+  font-size: 14px;
+  display: flex;
+  font-weight: 700;
+  line-height: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: white;
+  width: 100%;
+  height: 32px;
+  padding: 9px 53px;
+  border: none;
+}
