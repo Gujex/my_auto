@@ -43,6 +43,7 @@ const Card = ({
         0: "მარცხენა"
     }
 
+    // console.log(modelName)
 
     return (
         <div>

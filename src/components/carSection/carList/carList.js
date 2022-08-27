@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import Card from "../card/Card";
 import {useEffect, useState} from "react";
 import axios from "axios";
@@ -26,13 +26,13 @@ const CarList = ({data, setData, facturers}) => {
         }).catch(err => console.log(err))
     }, [data])
 
-    // function go(manid) {
-    //     const url = `https://api2.myauto.ge/ka/getManModels?man_id=${manid}`
-    //     axios.get(url).then(res => {
-    //         const data = res.data
-    //         setModels(data.data)
-    //     }).catch(err => console.log(err))
-    // }
+    function go(manid) {
+        const url = `https://api2.myauto.ge/ka/getManModels?man_id=${manid}`
+        axios.get(url).then(res => {
+            const data = res.data
+            setModels(data.data)
+        }).catch(err => console.log(err))
+    }
 
     useEffect(() => {
         const url = "https://static.my.ge/myauto/js/mans.json"
@@ -49,22 +49,8 @@ const CarList = ({data, setData, facturers}) => {
         return <div>Loading</div>
     } else {
 
-        products.forEach((le) => {
-            mans.map((man) => {
-                if (man.man_id == le.man_id) {
-                    le.man_name = man.man_name
-                }
-            })
-        })
 
-        // products?.forEach((el) => {
-        //     models?.map((model) => {
-        //         if (model.man_id == el.man_id) {
-        //             el.model_name = model.model_name
-        //             console.log("--==>>>",el)
-        //         }
-        //     })
-        // })
+
 
         return (<div className="col-md-9 col-lg-9 col-sm-12">
             <div className="d-flex">
