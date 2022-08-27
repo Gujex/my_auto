@@ -1,9 +1,23 @@
-.parent {
+
+@import "../../../breakPoints/breakPointss.scss" ;
+
+@mixin resizer($size) {
+  width: 100px;
+}
+
+  .parent {
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 14px;
   background-color: #FFFFFF;
   padding: 16px;
+    &__content {
+      display: flex;
+
+      @media only screen and (max-width: 992px) {
+        flex-direction: column;
+      }
+    }
 
   &__image {
     height: 144px;
@@ -23,6 +37,10 @@
       align-items: center;
       width: 250px;
       margin-top: 10px;
+
+      @media only screen and (max-width: 1400px) {
+        width: 150px;
+      }
     }
 
     &__carName {
@@ -55,6 +73,11 @@
       color: #6F7383;
     }
   }
+
+    .rightInfoContainer {
+      padding-leftLeft: 50px;
+      width: 100%;
+    }
 
   &__rightInfoParent {
     width: 100%;
