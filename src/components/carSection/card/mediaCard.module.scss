@@ -2,5 +2,9 @@
     .parentContent {
         display: flex;
         flex-direction: column;
+
+        &__priceAndName{
+            display: none;
+         }
     }
 }

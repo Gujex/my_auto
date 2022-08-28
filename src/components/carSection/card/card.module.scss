@@ -1,17 +1,20 @@
-
-  .parent {
+.mediaCard {
+  display: none;
+}
+.parent {
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 14px;
   background-color: #FFFFFF;
   padding: 16px;
-    &__content {
-      display: flex;
 
-      @media only screen and (max-width: 992px) {
-        flex-direction: column;
-      }
+  &__content {
+    display: flex;
+
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
     }
+  }
 
   &__image {
     height: 144px;
@@ -24,6 +27,7 @@
     }
   }
 
+
   &__middleContent {
     padding-left: 16px;
     display: flex;
@@ -35,7 +39,6 @@
       padding-top: 20px;
       padding-left: 0;
     }
-
 
 
     &__optionLines {
@@ -56,6 +59,11 @@
       line-height: 17px;
       letter-spacing: 0;
       text-align: left;
+
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
     }
 
     &__option {
@@ -78,21 +86,20 @@
       text-align: left;
       color: #6F7383;
       @media screen and (max-width: 767px) {
-        margin-top: 14px;
+        margin-top: 20px;
       }
     }
   }
 
-    .rightInfoContainer {
-      padding-leftLeft: 50px;
-      width: 100%;
-    }
+  .rightInfoContainer {
+    padding-left: 50px;
+    width: 100%;
+  }
 
   &__rightInfoParent {
     width: 100%;
     display: flex;
     justify-content: end;
-
 
     &__info {
       color: #6F7383;
@@ -109,6 +116,10 @@
       justify-content: end;
       align-items: center;
       margin-top: 27px;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
 
       &__value {
         font-family: "TBC Sailec", sans-serif;
@@ -128,6 +139,52 @@
         justify-content: center;
         align-items: center;
       }
+    }
+  }
+}
+
+.mediaTiTleList {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mediaTiTleList {
+    display: block;
+    padding-bottom: 14px;
+
+    &__carName {
+      font-family: "Helvetica Neue LT GEO", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0;
+      text-align: left;
+    }
+
+    &__price {
+      display: flex;
+      align-items: center;
+      font-family: "Helvetica Neue LT GEO", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      letter-spacing: 0;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    &__priceIcon {
+      margin-left: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 8px;
+      background-color: #F2F2F6;
+      border-radius: 50px;
+      color: black;
+      font-size: 12px;
     }
   }
 }

@@ -1,3 +1,14 @@
+.mediaHide {
+  border: 1px solid gray;
+  border-radius: 10px 10px 0 0;
+  background: white;
+  box-shadow: 0px 4px 16px 0px #A4AEC11A;
+  padding: 0;
+  height: 550px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
 
 .parent {
   border: 1px solid gray;
@@ -12,16 +23,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 992px) {
+    padding: 5px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 17px 26px;
+  }
 }
 
 .form {
-  background-color: #E2E5EB;
   padding: 0 24px 20px 24px;
 
   &__selects {
     padding: 22px 0;
-    border-bottom: 1px solid #E2E5EB;;
-
+    border-bottom: 1px solid #E2E5EB;
 
     &__p {
       font-size: 12px;
@@ -41,13 +57,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
   &__priceInputs {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 44px;
 
-    &__dir{
+    &__dir {
       margin: 0 5px;
     }
   }
@@ -63,9 +79,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .inActiveCurrency {
+  cursor: pointer;
   padding: 7px;
   width: 24px;
   height: 24px;
@@ -77,7 +95,7 @@
 }
 
 .btnParent {
-  padding: 16px 24px;
+  margin-top: 44px !important;
   background-color: white;
 }
 

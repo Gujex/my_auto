@@ -1,10 +1,11 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
 import Header from "./components/header/Header";
 import FilterSection from "./components/Filter/filterSection";
 import CarList from "./components/carSection/carList/carList"
-import axios from "axios";
 import {currencyConverter} from "./utils/currencyConvert";
+import {fetchData} from "./utils/apiFetchers";
+import "./app.css"
 
 const App = () => {
     const [facturers, setFactures] = useState([])
@@ -25,34 +26,21 @@ const App = () => {
     })
 
     useEffect(() => {
-        const URL = "https://static.my.ge/myauto/js/mans.json"
-        axios.get(URL).then(res => {
-            const data = res.data
-            setFactures(data)
-        }).catch(err => console.log(err))
+        fetchData("https://static.my.ge/myauto/js/mans.json", setFactures)
+        fetchData("https://api2.myauto.ge/ka/cats/get", setCategories)
         currencyConverter(data, setData)
     }, [])
 
-
-    useEffect(() => {
-        const URL = "https://api2.myauto.ge/ka/cats/get"
-        axios.get(URL).then(res => {
-            const categories = res.data
-            setCategories(categories.data)
-        })
-    }, [])
-
     return (<>
-            <Header/>
-            <Container>
-                <div style={{paddingTop: "68px"}} className="row">
-                        <FilterSection   categories={categories} facturers={facturers}
-                                       data={data} setData={setData}/>
-                        <CarList  facturers={facturers} data={data} setData={setData}/>
-                </div>
-            </Container>
-        </>);
+        <Header/>
+        <Container>
+            <div  className="row">
+                <FilterSection categories={categories.data} facturers={facturers}
+                               data={data} setData={setData}/>
+                <CarList facturers={facturers} data={data} setData={setData}/>
+            </div>
+        </Container>
+    </>);
 };
-
 
 export default App;

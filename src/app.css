@@ -1,0 +1,9 @@
+.row {
+    padding-top: 68px;
+}
+
+@media  screen and (max-width: 767px) {
+    .row {
+        padding-top: 0;
+    }
+}
