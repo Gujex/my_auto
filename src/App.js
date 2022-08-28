@@ -33,6 +33,7 @@ const App = () => {
         currencyConverter(data, setData)
     }, [])
 
+
     useEffect(() => {
         const URL = "https://api2.myauto.ge/ka/cats/get"
         axios.get(URL).then(res => {
