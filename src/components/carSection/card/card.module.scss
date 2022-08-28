@@ -1,12 +1,16 @@
 .mediaCard {
   display: none;
 }
+
 .parent {
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 14px;
   background-color: #FFFFFF;
   padding: 16px;
+  @media only screen and (max-width: 767px) {
+    margin-left: 0;
+  }
 
   &__content {
     display: flex;
@@ -49,6 +53,7 @@
 
       @media only screen and (max-width: 1400px) {
         width: 150px;
+        margin-bottom: 15px;
       }
     }
 
@@ -58,9 +63,8 @@
       font-weight: 500;
       line-height: 17px;
       letter-spacing: 0;
+      color: #272A37;
       text-align: left;
-
-
       @media screen and (max-width: 767px) {
         display: none;
       }
@@ -94,6 +98,10 @@
   .rightInfoContainer {
     padding-left: 50px;
     width: 100%;
+
+    @media screen and (max-width: 1200px) {
+      padding-left: unset;
+    }
   }
 
   &__rightInfoParent {

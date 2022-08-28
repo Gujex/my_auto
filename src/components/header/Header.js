@@ -6,7 +6,7 @@ import {Container} from "react-bootstrap";
 const Header = () => {
     return (<div className={classes.header}>
             <Container className="bg-white">
-                <img src={logo}/>
+                <img alt="logo" style={{cursor: "pointer"}} src={logo}/>
             </Container>
         </div>);
 };

@@ -9,6 +9,7 @@ import "./app.css"
 
 const App = () => {
     const [facturers, setFactures] = useState([])
+    const [products, setProducts] = useState(null)
     const [categories, setCategories] = useState([])
     const [data, setData] = useState({
         image: "https://static.my.ge/myauto/photos/4/2/0/6/3/thumbs/76360249_1.jpg?v=1",
@@ -35,9 +36,9 @@ const App = () => {
         <Header/>
         <Container>
             <div  className="row">
-                <FilterSection categories={categories.data} facturers={facturers}
+                <FilterSection products={products} categories={categories.data} facturers={facturers}
                                data={data} setData={setData}/>
-                <CarList facturers={facturers} data={data} setData={setData}/>
+                <CarList products={products} setProducts={setProducts} facturers={facturers} data={data} setData={setData}/>
             </div>
         </Container>
     </>);

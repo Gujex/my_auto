@@ -4,9 +4,8 @@ import axios from "axios";
 import Styles from "./carlist.module.scss"
 import {fetchData} from "../../../utils/apiFetchers";
 
-const CarList = ({data, setData, facturers, key}) => {
+const CarList = ({data, setData, facturers, products, setProducts}) => {
     const [mans, setMans] = useState({})
-    const [products, setProducts] = useState(null)
 
     useEffect(() => {
         const url = `https://api2.myauto.ge/ka/products?ForRent=${data.forRent}&Mans=${data.man_id}&Cats=${data.cat_Id}&PriceFrom=${data.minPrice}&PriceTo=${data.maxPrice}&Period=${data?.period}&SortOrder=${data?.sortOrder}`
@@ -25,7 +24,7 @@ const CarList = ({data, setData, facturers, key}) => {
         return null
     } else {
         products.forEach((product) => {
-            mans?.map((man) => {
+            mans?.forEach((man) => {
                 if (+man.man_id === +product.man_id) {
                     product.man_name = man.man_name
                 }
@@ -65,7 +64,7 @@ const CarList = ({data, setData, facturers, key}) => {
                 </div>
             </div>
             {products.map((el) => {
-                return <Card id={el?.car_id} data={data} products={products}
+                return <Card id={el.car_id} data={data} products={products}
                              manName={el.man_name}
                              year={el.prod_year}
                              manId={el.man_id}

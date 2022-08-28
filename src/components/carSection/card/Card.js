@@ -40,7 +40,7 @@ const Card = ({
                     />
                 </div>
                 <div className={Styles.parent__middleContent}>
-                    <div className={Styles.parent__middleContent__carName}>{manName}<span>{year} წ</span></div>
+                    <div className={Styles.parent__middleContent__carName}>{manName} <span>  { year} წ</span></div>
                     <div>
                         <div className="d-flex">
                             <div className={Styles.parent__middleContent__optionLines}><img alt="engine" src={engine}/> <span
