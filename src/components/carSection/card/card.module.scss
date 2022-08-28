@@ -1,10 +1,4 @@
 
-@import "../../../breakPoints/breakPointss.scss" ;
-
-@mixin resizer($size) {
-  width: 100px;
-}
-
   .parent {
   margin-left: 20px;
   margin-top: 20px;
@@ -38,9 +32,11 @@
     align-items: start;
 
     @media only screen and (max-width: 992px) {
-     padding-top: 20px;
+      padding-top: 20px;
       padding-left: 0;
     }
+
+
 
     &__optionLines {
       display: flex;
@@ -58,7 +54,7 @@
       font-size: 14px;
       font-weight: 500;
       line-height: 17px;
-      letter-spacing: 0px;
+      letter-spacing: 0;
       text-align: left;
     }
 
@@ -78,9 +74,12 @@
       font-size: 12px;
       font-weight: 400;
       line-height: 14px;
-      letter-spacing: 0px;
+      letter-spacing: 0;
       text-align: left;
       color: #6F7383;
+      @media screen and (max-width: 767px) {
+        margin-top: 14px;
+      }
     }
   }
 

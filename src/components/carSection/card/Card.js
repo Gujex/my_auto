@@ -1,12 +1,9 @@
-import React, {useContext, useEffect, useState} from 'react';
 import Styles from "./card.module.scss"
 import engine from "../../../images/engine.png"
 import transmits from "../../../images/transmis.png"
 import wheelImg from "../../../images/wheel.png"
 import run from "../../../images/run.png"
-import {UserContext} from "../../../context/dataContext";
-import axios from "axios";
-import Media from "./mediaCard.module.css"
+
 
 const Card = ({
                   fuel_type_id,
@@ -18,8 +15,8 @@ const Card = ({
                   carId,
                   photo,
                   manName,
-                  facturers,
-                  manId,
+                  id,
+                  data,
                   modelName
               }) => {
     const fuels = {
@@ -43,7 +40,6 @@ const Card = ({
         0: "მარცხენა"
     }
 
-    // console.log(modelName)
 
     return (
         <div>
@@ -82,8 +78,9 @@ const Card = ({
                             <div className={Styles.parent__rightInfoParent__info}>თბილისი</div>
                         </div>
                         <div className={Styles.parent__rightInfoParent__price}>
-                            <div className={Styles.parent__rightInfoParent__price__value}>{price}</div>
-                            <span className={Styles.parent__rightInfoParent__price__currency}>₾</span>
+                            <div
+                                className={Styles.parent__rightInfoParent__price__value}>{data.currency === "₾" ? price : price * data.currencyRate}</div>
+                            <span className={Styles.parent__rightInfoParent__price__currency}>{data.currency}</span>
                         </div>
                     </div>
                 </div>

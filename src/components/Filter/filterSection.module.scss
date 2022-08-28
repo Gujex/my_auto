@@ -1,17 +1,22 @@
 
-//.parent {
-//  border: 1px solid gray;
-//  border-top: none;
-//  border-radius: 10px 10px 0 0;
-//}
+.parent {
+  border: 1px solid gray;
+  border-radius: 10px 10px 0 0;
+  background: white;
+  padding: 0;
+}
 
 .icons {
   padding: 17px 26px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
-  padding: 0px 24px 20px 24px;
+  background-color: #E2E5EB;
+  padding: 0 24px 20px 24px;
 
   &__selects {
     padding: 22px 0;
@@ -31,7 +36,7 @@
 
   &__priceSection {
 
-    padding: 16px 0px 16px 0px;
+    padding: 16px 0 16px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +53,7 @@
   }
 }
 
-.lari {
+.activeCurrency {
   padding: 7px;
   background: #272A37;
   color: white;
@@ -60,7 +65,7 @@
   align-items: center;
 }
 
-.dollar {
+.inActiveCurrency {
   padding: 7px;
   width: 24px;
   height: 24px;
@@ -71,6 +76,10 @@
   align-items: center;
 }
 
+.btnParent {
+  padding: 16px 24px;
+  background-color: white;
+}
 
 .btn {
   font-family: "font-family: TBC Sailec", sans-serif;

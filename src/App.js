@@ -1,11 +1,10 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
 import Header from "./components/header/Header";
 import FilterSection from "./components/Filter/filterSection";
 import CarList from "./components/carSection/carList/carList"
-import {UserContext} from "./context/dataContext";
 import axios from "axios";
-
+import {currencyConverter} from "./utils/currencyConvert";
 
 const App = () => {
     const [facturers, setFactures] = useState([])
@@ -21,8 +20,9 @@ const App = () => {
         fuelType: "0",
         transmission: "0",
         counter: 0,
+        currency: "₾",
+        id: Math.random().toString()
     })
-
 
     useEffect(() => {
         const URL = "https://static.my.ge/myauto/js/mans.json"
@@ -30,6 +30,7 @@ const App = () => {
             const data = res.data
             setFactures(data)
         }).catch(err => console.log(err))
+        currencyConverter(data, setData)
     }, [])
 
     useEffect(() => {
@@ -40,22 +41,16 @@ const App = () => {
         })
     }, [])
 
-
-
-    return (
-        <>
+    return (<>
             <Header/>
             <Container>
-                <div className="row">
-                    <UserContext.Provider value={data, setData}>
-                        <FilterSection setCategories={setCategories} categories={categories} facturers={facturers}
-                                       setFactures={setFactures} data={data} setData={setData}/>
-                        <CarList facturers={facturers} data={data} setData={setData}/>
-                    </UserContext.Provider>
+                <div style={{paddingTop: "68px"}} className="row">
+                        <FilterSection   categories={categories} facturers={facturers}
+                                       data={data} setData={setData}/>
+                        <CarList  facturers={facturers} data={data} setData={setData}/>
                 </div>
             </Container>
-        </>
-    );
+        </>);
 };
 
 
